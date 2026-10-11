@@ -1,0 +1,13 @@
+name: diag-deferred
+on: { push: { branches: [diag/deferred-removal] } }
+permissions: { contents: read }
+jobs:
+  win:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - run: node diag-deferred.mjs
+      - run: Get-ExecutionPolicy -List; $PSVersionTable.PSVersion
+        shell: powershell
