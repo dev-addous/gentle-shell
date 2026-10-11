@@ -3,7 +3,7 @@ import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readdirSync, writeFil
 import { dirname, join } from "node:path";
 import { tmpdir } from "node:os";
 const roots = {};
-for (const v of ["B", "C"]) {
+for (const v of ["E", "F", "G", "H"]) {
   const root = join(mkdtempSync(join(tmpdir(), `diag2-${v}-`)), "gentle-shell");
   const nodeDir = join(root, "runtime", "node-24.21.0");
   mkdirSync(nodeDir, { recursive: true }); mkdirSync(join(root, "bin"));
